@@ -5,7 +5,7 @@
 
 param(
     [string]$Prefix = "BadKB",
-    [int]$UiWaitMs = 1500
+    [int]$UiWaitMs = 3000
 )
 
 Add-Type -AssemblyName UIAutomationClient
