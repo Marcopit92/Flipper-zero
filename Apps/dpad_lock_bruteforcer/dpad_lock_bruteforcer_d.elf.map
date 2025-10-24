@@ -1,0 +1,256 @@
+
+Discarded input sections
+
+ .text          0x00000000        0x0 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .data          0x00000000        0x0 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .bss           0x00000000        0x0 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .comment       0x00000000       0x1c C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+LOAD c:/users/pitam/.ufbt/toolchain/x86_64-windows/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
+LOAD c:/users/pitam/.ufbt/toolchain/x86_64-windows/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a
+LOAD c:/users/pitam/.ufbt/toolchain/x86_64-windows/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a
+LOAD c:/users/pitam/.ufbt/toolchain/x86_64-windows/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libsupc++_nano.a
+
+.text           0x00000000      0x580
+ *(.text)
+ *(.stub)
+ *(.text*)
+ .text.menu_previous
+                0x00000000        0x6 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .text.code_previous
+                0x00000006        0x4 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ *fill*         0x0000000a        0x2 
+ .text.code_input
+                0x0000000c       0x40 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .text.credits_previous
+                0x0000004c       0x20 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .text.credits_input
+                0x0000006c       0x30 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .text.menu_input
+                0x0000009c       0x70 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .text.menu_draw
+                0x0000010c       0xac C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .text.code_draw
+                0x000001b8       0xd0 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .text.credits_draw
+                0x00000288       0x78 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .text.help_previous
+                0x00000300        0x4 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .text.my_app_alloc
+                0x00000304      0x1c0 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+                0x00000304                my_app_alloc
+ .text.my_app_free
+                0x000004c4       0x8c C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+                0x000004c4                my_app_free
+ .text.dpad_lock_bruteforcer_app
+                0x00000550       0x30 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+                0x00000550                dpad_lock_bruteforcer_app
+ *(.text.*)
+ *(.text._*)
+ *(.init)
+ *(.fini)
+
+.rodata         0x00000580      0xb84
+ *(.rodata)
+ .rodata        0x00000580        0xc C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ *(.rodata1)
+ *(.rodata.*)
+ .rodata.menu_draw.str1.1
+                0x0000058c       0x19 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .rodata.code_draw.str1.1
+                0x000005a5       0x19 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .rodata.credits_draw.str1.1
+                0x000005be       0x43 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .rodata.my_app_alloc.str1.1
+                0x00000601      0x298 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .rodata.str1.1
+                0x00000899      0x533 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .rodata.CODE_ITEMS
+                0x00000dcc      0x338 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+.data
+ *(.data)
+ *(.data1)
+ *(.data.*)
+
+.bss            0x00001104        0x4
+ *(.bss)
+ *(.bss*)
+ .bss.g_app     0x00001104        0x4 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ *(.sbss)
+ *(.sbss*)
+ *(COMMON)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.gnu.build.attributes
+ *(.gnu.build.attributes .gnu.build.attributes.*)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x80
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x80 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x1205
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000     0x1205 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+.debug_abbrev   0x00000000      0x495
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x495 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+.debug_line     0x00000000      0xa10
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x00000000      0x3f7 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.menu_previous
+                0x000003f7       0x1b C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.code_previous
+                0x00000412       0x1b C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.code_input
+                0x0000042d       0x89 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.credits_previous
+                0x000004b6       0x54 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.credits_input
+                0x0000050a       0x65 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.menu_input
+                0x0000056f       0xd5 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.menu_draw
+                0x00000644       0x9d C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.code_draw
+                0x000006e1       0xa3 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.credits_draw
+                0x00000784       0x38 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.help_previous
+                0x000007bc       0x12 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.my_app_alloc
+                0x000007ce      0x12a C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.my_app_free
+                0x000008f8       0xd3 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line.text.dpad_lock_bruteforcer_app
+                0x000009cb       0x45 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ .debug_line_end
+                0x00000a10        0x0 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+.debug_frame    0x00000000      0x18c
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x18c C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+.debug_str      0x00000000      0x7c2
+ *(.debug_str)
+ .debug_str     0x00000000      0x7c2 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_addr
+ *(.debug_addr)
+
+.debug_line_str
+ *(.debug_line_str)
+
+.debug_loclists
+                0x00000000      0x3c5
+ *(.debug_loclists)
+ .debug_loclists
+                0x00000000      0x3c5 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_names
+ *(.debug_names)
+
+.debug_rnglists
+                0x00000000       0xbd
+ *(.debug_rnglists)
+ .debug_rnglists
+                0x00000000       0xbd C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+
+.debug_str_offsets
+ *(.debug_str_offsets)
+
+.debug_sup
+ *(.debug_sup)
+
+.ARM.attributes
+                0x00000000       0x34
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x34 C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer/flipper_app.o
+ *(.gnu.attributes)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+
+/DISCARD/
+ *(.comment)
+ *(.comment.*)
+ *(.llvmbc)
+ *(.llvmcmd)
+OUTPUT(C:/Users/pitam/.ufbt/build/dpad_lock_bruteforcer_d.elf elf32-littlearm)
+LOAD linker stubs

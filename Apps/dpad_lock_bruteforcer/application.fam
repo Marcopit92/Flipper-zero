@@ -1,0 +1,13 @@
+App(
+    appid="dpad_lock_bruteforcer",
+    name="D-Pad Lock Bruteforcer",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="dpad_lock_bruteforcer_app",
+    requires=[
+        "gui",
+        "input",
+        "dialogs",
+    ],
+    stack_size=4096,
+    fap_icon="assets/fap_icon.png",
+)
