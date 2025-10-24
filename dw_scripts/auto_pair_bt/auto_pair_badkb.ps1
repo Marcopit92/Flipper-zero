@@ -67,7 +67,7 @@ function Find-ElementLike($parent, $prefix) {
 
 # === Avvio ===
 Log "=== Avvio auto_pair_badkb (prefisso: $Prefix) ==="
-Start-Process "ms-settings:bluetooth"
+Start-Process "ms-settings:bluetooth" -ErrorAction SilentlyContinue
 Start-Sleep 3
 
 $desktop = [System.Windows.Automation.AutomationElement]::RootElement
